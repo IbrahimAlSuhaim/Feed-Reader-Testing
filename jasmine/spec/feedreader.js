@@ -71,9 +71,9 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('visibility is changable', function() {
-              $('.menu-icon-link').trigger('click');
+              $('.menu-icon-link').click();
               expect($('body').hasClass('menu-hidden')).toBe(false);
-              $('.menu-icon-link').trigger('click');
+              $('.menu-icon-link').click();
               expect($('body').hasClass('menu-hidden')).toBe(true);
           });
     });
@@ -91,10 +91,9 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         it('loadFeed function is called and completes its work', function(done) {
+         it('loadFeed function is called and completes its work', function() {
            const entries = $('.feed .entry');
            expect(entries.length).toBeGreaterThan(0);
-           done();
          });
     });
 
@@ -117,9 +116,8 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-         it('is loaded', function(done) {
+         it('is loaded', function() {
            expect(feedAfterFirstLoad).not.toEqual(feedAfterSecondLoad);
-           done();
          });
     });
 }());
