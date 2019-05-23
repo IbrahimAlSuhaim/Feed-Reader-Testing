@@ -88,8 +88,6 @@ $(function() {
         /* A test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('loadFeed function is called and completes its work', function() {
            const entries = $('.feed .entry');
@@ -114,7 +112,6 @@ $(function() {
 
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
          */
          it('is loaded', function() {
            expect(feedAfterFirstLoad).not.toEqual(feedAfterSecondLoad);
